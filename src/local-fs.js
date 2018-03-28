@@ -178,7 +178,7 @@ class LocalFS implements ILocalPackageManager {
           uploadStream.emit('error', fSError(fileExist));
         }
 
-        const temporalName = path.join(this.path, `${pathName}.tmp-${String(Math.random()).replace(/^0\./, '')}`);
+        const temporalName = path.join(this.path, `${name}.tmp-${String(Math.random()).replace(/^0\./, '')}`);
         const file = fs.createWriteStream(temporalName);
         const removeTempFile = () => fs.unlink(temporalName, function() {});
         let opened = false;
